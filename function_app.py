@@ -124,7 +124,7 @@ def http_trigger(req: func.HttpRequest):
     except Exception as e:
         logging.error(f"An error occurred: {str(e)}")
         return func.HttpResponse(
-            "An error occurred while processing your request.",
+            "An error occurred while processing yohhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhur request.",
             status_code=500
         )
     
@@ -139,7 +139,7 @@ def http_trigger(req: func.HttpRequest):
 
     if name:
         return func.HttpResponse(
-            f"Hello, {name}. This HTTP triggered function executed successfully. "
+            f"Hello, {name}. This HTTP triggered function hhhhhhh executed successfully. "
             f"Here is the data: {result}",
             status_code=200
         )
