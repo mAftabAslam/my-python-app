@@ -90,6 +90,7 @@ import azure.functions as func
 import logging
 import pyodbc
 import pandas as pd
+import os
 
 # Define the connection string for the local SQL database
 cnxn_str = (
@@ -105,7 +106,9 @@ app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
 @app.route(route="http_trigger")
 def http_trigger(req: func.HttpRequest):
     logging.info('Python HTTP trigger function processed a request.')
-
+    # Get the setting named 'myAppSetting'
+    my_app_setting_value = os.environ["myAppSetting"]
+    logging.info(f'My app setting value:{my_app_setting_value}')
     try:
         # Connect to the local SQL database
         conn = pyodbc.connect(cnxn_str)
